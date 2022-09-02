@@ -163,8 +163,9 @@ require 'rails_helper'
 
 
 describe 'Merchants API' do
+  let!(:merchants) { create_list(:merchant, 3) }
+  # let!(:merchants) { id = create(:merchant).id }
   it 'has a list of all merchants' do
-    create_list(:merchant, 3)
 
     get '/api/v1/merchants'
 
@@ -245,7 +246,6 @@ describe 'Merchants API' do
   end
 
   it 'shows a message if no merchant matches search by name' do
-    create_list(:merchant, 5)
 
     search_name = 'lotr'
 
@@ -260,7 +260,6 @@ describe 'Merchants API' do
   end
 
   it 'returns 404 if search by name is empty' do
-    create_list(:merchant, 5)
 
     search_name = ''
 
