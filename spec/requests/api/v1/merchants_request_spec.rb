@@ -247,7 +247,7 @@ describe 'Merchants API' do
   it 'shows a message if no merchant matches search by name' do
     create_list(:merchant, 5)
 
-    search_name = 'Junk'
+    search_name = 'lotr'
 
     get "/api/v1/merchants/find?name=#{search_name}"
 
