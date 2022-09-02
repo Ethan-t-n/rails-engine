@@ -149,7 +149,7 @@ describe 'Items API' do
   it 'returns 400 if no item matches search' do
     create_list(:item, 5)
 
-    search_name = 'Junk'
+    search_name = 'lotr'
 
     get "/api/v1/items/find_all?name=#{search_name}"
 
